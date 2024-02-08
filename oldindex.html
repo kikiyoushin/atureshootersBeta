@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQueryのリンク -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+
+    <title>チュアシュβ</title>
+</head>
+<body>
+
+
+
+<script>
+  $(function () {
+    var urls = [
+      "./page1.html",
+      "./page2.html",
+      "./page3.html"
+      // 必要なページのURLをここに追加
+    ];
+
+    var areas = [
+      "#area1",
+      "#area2",
+      "#area3"
+      // 各ページを埋め込む先の要素をここに追加
+    ];
+
+    // 複数のHTMLを読み込む関数
+    function loadHTML(index) {
+      if (index >= urls.length) {
+        return; // 全てのページを読み込み終わったら終了する
+      }
+
+      $.ajax({
+        url: urls[index],
+        cache: false,
+        dataType: "html",
+        success: function (html) {
+          var selectedHTML = $(html).find(".area"); // 別ページの特定の要素を選択
+          $(areas[index]).append(selectedHTML); // 対応するエリアにHTMLを挿入
+          loadHTML(index + 1); // 次のページを読み込む
+        },
+      });
+    }
+
+    loadHTML(0); // 最初のページを読み込む
+  });
+</script>
+
+<div id="area1">
+  <!-- ここにページ1が読み込まれる -->
+</div>
+<div id="area2">
+  <!-- ここにページ2が読み込まれる -->
+</div>
+<div id="area3">
+  <!-- ここにページ3が読み込まれる -->
+</div>
+必要に応じて他のエリアを追加
+
+</body>
+</html>
