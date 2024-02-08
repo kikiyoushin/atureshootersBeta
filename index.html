@@ -7,13 +7,27 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
 
     <title>チュアシュβ</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header id="header"></header>
 
-    <p>ここ内容</p>
+<p id="tabcontrol">
+    <a href="#tabpage1">タブ1</a>
+    <a href="#tabpage2">タブ2</a>
+    <a href="#tabpage3">タブ3</a>
+ </p>
+ <div id="tabbody">
+    <div id="tabpage1">
+        <iframe src="page1.html" frameborder="0"></iframe>
+    </div>
+    <div id="tabpage2">
+        <iframe src="page2.html" frameborder="0"></iframe>
+    </div>
+    <div id="tabpage3">
+        <iframe src="page3.html" frameborder="0"></iframe>
+    </div>
+ </div>
+ <script src="./js/script.js"></script>
 
-    <footer id="footer"></footer>
-    <script src="./js/main.js"></script>
 </body>
 </html>
