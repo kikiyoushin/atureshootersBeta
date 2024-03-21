@@ -1,8 +1,32 @@
 
-
+<link rel="stylesheet" href="./css/style.css"></link>
+<style>
+    /*タブ以下の色を変更*/
+    #tabcontrol a:nth-child(n), #tabbody div:nth-child(n){ background-color: var(--sec1C); }
+  </style>
+  
 <div class="area">
+    <p id="tabcontrol" class="tabcontrol">
+        <a href="#tabpage1-1">タブ1-1</a>
+        <a href="#tabpage1-2">タブ1-2</a>
+        <a href="#tabpage1-3">タブ1-3</a>
+     </p>
+     <div id="tabbody">
+        <div id="tabpage1-1">
+            <iframe src="page1-1.html" frameborder="0"></iframe>
+        </div>
+        <div id="tabpage1-2">
+            <iframe src="page1-2.html" frameborder="0"></iframe>
+        </div>
+        <div id="tabpage1-3">
+            <iframe src="page1-3.html" frameborder="0"></iframe>
+        </div>
+     </div>
+     <script src="./js/script.js"></script>
+    
     page1です。<br>
     aiueo<br>
-    aaa
+    aaa<br>
+    
 </div>
 <script type="text/javascript">inculude();</script>

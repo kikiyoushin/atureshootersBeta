@@ -1,0 +1,61 @@
+<script src="./js/jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="./css/style.css"></link>
+
+<div class="area">
+
+  <div class="menu">
+    <ul>
+      <li><a href="#title">タイトルへジャンプ</a></li>
+    </ul>
+  </div>
+
+      <p>page1-1の内容です。</p>
+
+      htmlでテキスト画像をインクルードする
+
+      ここの右側にさらにボタンを作成して↓スクロールへの碇を作成する。
+      
+    aaaaaaaaaaaaaa
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div id="title">divの着地点</div>
+    タイトルで飛んだ先。
+    <!-- https://jp-seemore.com/web/2408/#toc4 -->
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.color').css('color', 'red');
+  });
+    
+</script>
