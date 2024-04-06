@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <link rel="stylesheet" href="./css/reset.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQueryのリンク -->
     <script src="./js/jquery-3.7.1.min.js"></script>
 
+    
     <title>チュアシュβ</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        body{
+            margin: 0px;
+            border: orange solid;
+        }
+        iframe{
+            border: red solid;
+            margin: 0;
+            width: 100%;
+            height: 88vh;
+        }
+    </style>
 </head>
 <body>
-
-<p id="tabcontrol" class="tabcontrol">
-    <a href="#tabpage1">タブ1</a>
-    <a href="#tabpage2">タブ2</a>
-    <a href="#tabpage3">タブ3</a>
- </p>
- <div id="tabbody">
-    <div id="tabpage1">
-        <iframe src="page1.html" frameborder="0"></iframe>
+    <p id="tabcontrol">
+        <a href="#tabpage1">タブ1</a>
+        <a href="#tabpage2">タブ2</a>
+        <a href="#tabpage3">タブ3</a>
+    </p>
+    <div id="tabbody" class="container">
+        <div id="tabpage1">
+            <iframe src="page1.html" frameborder="0"></iframe>
+        </div>
+        <div id="tabpage2">
+            <iframe src="page2.html" frameborder="0"></iframe>
+        </div>
+        <div id="tabpage3">
+            <iframe src="page3.html" frameborder="0"></iframe>
+        </div>
     </div>
-    <div id="tabpage2">
-        <iframe src="page2.html" frameborder="0"></iframe>
-    </div>
-    <div id="tabpage3">
-        <iframe src="page3.html" frameborder="0"></iframe>
-    </div>
- </div>
- <script src="./js/script.js"></script>
-
- 
+    <script src="./js/script.js"></script>
 
 </body>
 </html>
+<!-- 
+ここのを作ってみる
+https://web-camp.io/magazine/archives/88092 -->

@@ -2,25 +2,10 @@
     --sec1C:#ffffdd;
     --sec2C:#ddffdd;
     --sec3C:#ddddff;
-};
-
-
-p {
-    color: green;
-};
-
-header {
-    border: 1px solid black;
 }
-
-iframe {
-    width: 100%;
-    height: 100rem;
-}
-
 
 /* ▼タブ */
-.tabcontrol a,.area .tabcontrol a {
+#tabcontrol a {
     display: inline-block;            /* インラインブロック化 */
     border-width: 1px 1px 0px 1px;    /* 下以外の枠線を引く */
     border-style: solid;              /* 枠線の種類：実線 */
@@ -34,19 +19,75 @@ iframe {
     position: relative;               /* JavaScriptでz-indexを調整するために必要 */
  }
  /* ▼タブにマウスポインタが載った際（任意） */
- .tabcontrol a:hover {
+ #tabcontrol a:hover {
     text-decoration: underline;   /* リンクの下線を引く */
  }
- /* ▼タブの中身 */
- .tabbody div {
-    border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */
-    margin-top: -1px;        /* 上側にあるタブと1pxだけ重ねるために「-1px」を指定 */
-    padding: 1em;            /* 内側の余白量 */
-    background-color: white; /* 背景色：白色 */
-    position: relative;      /* z-indexを調整するために必要 */
-    z-index: 0;              /* 重なり順序を「最も背面」にするため */
- }
+
  /* ▼タブの配色 */
  #tabcontrol a:nth-child(1), #tabbody div:nth-child(1) { background-color: var(--sec1C); }/* 1つ目のタブとその中身用の配色 */
  #tabcontrol a:nth-child(2), #tabbody div:nth-child(2) { background-color: var(--sec2C); }/* 2つ目のタブとその中身用の配色 */
  #tabcontrol a:nth-child(3), #tabbody div:nth-child(3) { background-color: var(--sec3C); }/* 3つ目のタブとその中身用の配色 */
+
+ /* -.-.-.-.-.-.-親子共通要素-.-.-.-.-.-.- */
+ #tabcontrol{
+   height: 5vh;
+   text-align: left;
+   margin-bottom: -5px;
+}
+ /* -.-.-.-.-.-.-子要素-.-.-.-.-.-.- */
+ /* iframeの中央揃え要素兼用 */
+.container{
+   text-align: center;
+   margin: auto;
+   display: block;
+   height: auto;
+}
+
+ /* -.-.-.-.-.-.-孫要素-.-.-.-.-.-.- */
+ .area {
+    position: relative;
+    width: 100%;
+    height: auto;
+    word-break: break-all;
+ }
+ .nav {
+   position: fixed;
+   top: 0;
+   right: 0;
+   border: violet solid;
+   width: 20%;
+}
+.main {
+   border: aqua solid;
+   width: 79%;
+ }
+ /*
+メモ
+indexでは
+body
+┗tabcontrol
+┗tabbody
+
+だが、tabbodyの中のiframeの中(page1)では
+area
+┗tabcontrol
+┗tabbody
+
+さらにそのtabbodyの中のiframeの中(page1-1)では
+area
+┗nav
+┗インクルード内容物
+
+となっている。
+それぞれのタグの親はどれか？でタイムループ中。
+別のタグを作った方がいい。
+
+areaは子、孫みたいな名前つけたらどうっすか
+sb-area
+ssb-areaとか
+
+100vwをつかえ
+
+
+resetcssいれて
+ */
